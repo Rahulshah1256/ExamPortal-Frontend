@@ -1,0 +1,23 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background-color:rgb(120, 118, 230); 
+}
+
+
+.mat-toolbar span {
+  color: white; 
+}
+
+
+.mat-toolbar a.example-icon.favorite-icon {
+  font-size: 18px; 
+  /* font-style: oblique; */
+  text-decoration: solid;
+  color: white;
+  border-style:inherit;
+  border-radius: 80%;
+  border-color: brown;
+}

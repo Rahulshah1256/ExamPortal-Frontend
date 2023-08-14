@@ -1,0 +1,17 @@
+/* Adjust the size and position of the camera feed */
+.camera-feed {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1000px;
+  }
+  
+  /* Center the camera feed on the page */
+  /* :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  } */
