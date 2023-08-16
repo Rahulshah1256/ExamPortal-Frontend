@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AddQuizComponent implements OnInit {
   categories = [];
+  qId: any;
 
   quizData = {
     title: '',
@@ -61,7 +62,9 @@ export class AddQuizComponent implements OnInit {
       (data) => {
         Swal.fire('Success', 'Quiz is added Successfully', 'success').then((e) =>{
           this._router.navigate(['/admin/quizzes'])
-        });;;
+        });
+        // Pass numberOfQuestions to Add Question component
+    this._router.navigate(['/admin/add-question', this.qId, this.quizData.numberOfQuestions]);
         this.quizData = {
           title: '',
           description: '',

@@ -23,6 +23,7 @@ import { NormalGuard } from './services/normal.guard';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
+import { ResultComponent } from './pages/admin/result/result.component';
 
 const routes: Routes = [
   {
@@ -88,6 +89,10 @@ const routes: Routes = [
       {
         path: 'update-question/:quesId',
         component: UpdateQuestionComponent
+      },
+      {
+        path: 'result',
+        component: ResultComponent,
       }
     ],
   },

@@ -17,6 +17,7 @@ export class SidebarComponent implements OnInit {
     },
     { linkTitle: 'Quizzes', link: '/admin/quizzes', icon: 'list' },
     { linkTitle: 'Add Quiz', link: '/admin/add-quiz', icon: 'add' },
+    { linkTitle: 'Result', link: '/admin/result', icon: 'result' },
     // { linkTitle: 'Logout', link: '/', icon: 'login' },
   ];
 

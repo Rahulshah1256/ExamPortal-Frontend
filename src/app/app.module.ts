@@ -45,6 +45,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { UpdateCategoryComponent } from './pages/admin/update-category/update-category.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
+import { ResultComponent } from './pages/admin/result/result.component';
 
 
 
@@ -75,6 +76,7 @@ import { UserProfileComponent } from './pages/user/user-profile/user-profile.com
     UpdateCategoryComponent,
     UpdateQuestionComponent,
     UserProfileComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,

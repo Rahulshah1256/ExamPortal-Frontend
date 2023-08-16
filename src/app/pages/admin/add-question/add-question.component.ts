@@ -4,6 +4,7 @@ import { QuestionService } from 'src/app/services/question.service';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-question',
@@ -12,6 +13,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 })
 export class AddQuestionComponent implements OnInit {
   public Editor = ClassicEditor;
+  numberOfQuestions: number; // Add this property
   qId;
   qTitle;
   question = {
@@ -26,13 +28,16 @@ export class AddQuestionComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
-    private _question: QuestionService
+    private _question: QuestionService,
+    private _router: Router,
   ) {}
 
   ngOnInit(): void {
     this.qId = this._route.snapshot.params.qid;
     this.qTitle = this._route.snapshot.params.title;
     this.question.quiz['qId'] = this.qId;
+
+    this.numberOfQuestions = +this._route.snapshot.params.numberOfQuestions; // Parse the parameter to a number
   }
 
   formSubmit() {
@@ -50,10 +55,17 @@ export class AddQuestionComponent implements OnInit {
       return;
     }
 
+    if (this._route.snapshot.params.numberOfQuestions < this.numberOfQuestions) {
+      Swal.fire('Warning', `You can only add up to ${this.numberOfQuestions} questions.`, 'warning');
+      return;
+    }
+
     //form submit
     this._question.addQuestion(this.question).subscribe(
       (data: any) => {
-        Swal.fire('Success ', 'Question Added. Add Another one', 'success');
+        Swal.fire('Success ', 'Question Added', 'success').then((e) =>{
+          this._router.navigate(['/admin/view-questions'])
+        });
         this.question.content = '';
         this.question.option1 = '';
         this.question.option2 = '';
