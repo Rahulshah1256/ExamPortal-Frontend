@@ -1,0 +1,8 @@
+.camera-feed {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1000px;
+}

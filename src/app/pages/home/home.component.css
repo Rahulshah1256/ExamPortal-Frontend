@@ -1,0 +1,27 @@
+.full-width {
+  width: 100%;
+  margin-top: 10px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.bootstrap-wrapper {
+  margin-top: 10vh;
+}
+
+.root {
+  margin-top: 80px;
+}
+.signupbtn {
+  color: blue;
+  font-size: 16px;
+  cursor: pointer;
+}
+.loginbtn {
+  width: 100%;
+  font-size: 18px;
+}
+
+.text {
+  margin: 10vh;
+}

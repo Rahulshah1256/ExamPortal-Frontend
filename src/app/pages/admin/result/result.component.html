@@ -1,0 +1,40 @@
+<mat-card class="card" *ngIf="result"  >
+  <div class="container text-center">
+    <h1 style="margin-top: 10px">Result</h1>
+  </div>
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <table class="table text-center">
+              <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Question Attempted</th>
+                <th>Correct Answer</th>
+                <th>Scored Marks</th>
+                <th>Submitted Date Time</th>
+              </tr>
+
+              <tr>
+                <td>{{ result.username }}</td>
+                <td>{{ result.firstName }} {{ result.lastName }}</td>
+                <td>{{ result.qAttempted }}</td>
+                <td>{{ result.correctAns }}</td>
+                <td>{{ result.marksScored }}</td>
+                <td>{{ result.submitDateTime }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions class="text-center" style="margin-bottom: 10px">
+    <button mat-raised-button color="primary" routerLink="/admin/profile">
+      GO TO HOME
+    </button>
+  </mat-card-actions>
+</mat-card>

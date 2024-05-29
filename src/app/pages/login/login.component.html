@@ -1,0 +1,75 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="text text-center">
+          <h1 style="color: rgb(24, 73, 116)">
+            <strong>Welcome To Exam Portal</strong>
+          </h1>
+          <h3 style="text-align: justify">
+            The key advantage of using the online examination system is that it
+            is well incorporated into a technologically rich world. For
+            professional situations, the use of pen and paper is growing. Most
+            of the work is done with email, text messages, presentation
+            machines, computer-based development, etc
+          </h3>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <mat-card>
+          <div class="container text-center">
+            <img src="../../../assets/examlogo.png" alt="" />
+          </div>
+          <form (ngSubmit)="formSubmit()">
+            <mat-form-field class="full-width text-center" appearance="outline">
+              <mat-label>User Name</mat-label>
+              <input
+                [(ngModel)]="loginData.username"
+                name="username"
+                required
+                matInput
+                placeholder="Enter here"
+              />
+              <mat-hint>Enter Valid User Name</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>User Password</mat-label>
+              <input
+                [(ngModel)]="loginData.password"
+                name="password"
+                type="password"
+                required
+                matInput
+                placeholder="Enter here"
+              />
+            </mat-form-field>
+
+            <div class="container text-center">
+              <button mat-raised-button color="primary" type="submit">
+                Login
+              </button>
+              <button
+                class="ml10"
+                mat-raised-button
+                color="accent"
+                (click)="clearFields()"
+              >
+                Clear
+              </button>
+              <p style="margin-top: 10px">
+                Don't have an account ?<span
+                  routerLink="/signup"
+                  class="signupbtn"
+                >
+                  Register here</span
+                >
+              </p>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<mat-card class="card" *ngIf="user">
+    <div class="container text-center">
+      <h1 style="margin-top: 10px">Update Profile</h1>
+    </div>
+    <mat-card-content>
+      <div class="bootstrap-wrapper">
+        <div class="container">
+          <div class="container text-center">
+            <img
+              src="https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg"
+              alt=""
+              class="profile-image"
+            />
+  
+            <h1 class="mt20">{{ user.firstName }} {{ user.lastName }}</h1>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <table class="table text-center">
+                <tr>
+                  <td>Username</td>
+                  <td>{{ user.username }}</td>
+                </tr>
+  
+                <tr>
+                  <td>Phone</td>
+                  <td>{{ user.phone }}</td>
+                </tr>
+                <tr>
+                  <td>Role</td>
+                  <td>{{ user.authorities[0].authority }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center" style="margin-bottom: 10px">
+      <button mat-raised-button color="primary">UPDATE</button>
+    </mat-card-actions>
+  </mat-card>
+
+
+
+  <mat-card class="col-md-10 offset-md-1">
+    <div class="container text-center mt20">
+      <h1><strong> Update Category</strong></h1>
+    </div>
+  
+    <mat-card-content>
+      <div class="bootstrap-wrapper">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <form *ngIf="user" (ngSubmit)="updateCategory()">
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input
+                  required
+                  [(ngModel)]="categories.title"
+                  name="title"
+                  matInput
+                  placeholder="Enter Title here"
+                />
+              </mat-form-field>
+  
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea
+                  matInput
+                  placeholder="Enter Description here"
+                  rows="10"
+                  [(ngModel)]="categories.description"
+                  name="description"
+                  required
+                ></textarea>
+              </mat-form-field>
+  
+              <div class="container text-center">
+                <button mat-raised-button color="accent" type="submit">
+                  <mat-icon class="mr-2">edit</mat-icon>Update Category
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  

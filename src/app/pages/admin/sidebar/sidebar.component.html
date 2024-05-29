@@ -1,0 +1,14 @@
+<mat-card class="sidebar">
+  <mat-nav-list>
+    <mat-list-item
+      class="list"
+      *ngFor="let item of listItems"
+      [routerLink]="item.link"
+      routerLinkActive="active"
+    >
+      <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+
+      {{ item.linkTitle }}
+    </mat-list-item>
+  </mat-nav-list>
+</mat-card>

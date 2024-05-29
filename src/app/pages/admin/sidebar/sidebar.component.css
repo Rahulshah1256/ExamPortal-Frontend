@@ -1,0 +1,17 @@
+.active {
+    color: #4343e4;
+    font-weight: bold !important;
+    font-size: 18px;
+  }
+  .sidebar {
+    width: 240px;
+    background-color: rgb(207, 214, 210);
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: -30px;
+    height: 100%;
+  }
+  .list{
+    
+    font-weight: 600;
+  }
